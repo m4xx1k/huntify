@@ -1,0 +1,18 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "prettier.prettierPath": "node_modules/prettier",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "editor.formatOnSave": true,
+  "prettier.enable": true,
+  "prettier.preferLocal": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "prettier.requireConfig": true
+}
+
