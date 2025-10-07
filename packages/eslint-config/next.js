@@ -14,9 +14,13 @@ import { config as baseConfig } from "./base.js";
  * */
 export const nextJsConfig = [
   ...baseConfig,
+
   js.configs.recommended,
+
   eslintConfigPrettier,
+
   ...tseslint.configs.recommended,
+
   {
     ...pluginReact.configs.flat.recommended,
     languageOptions: {
@@ -26,6 +30,7 @@ export const nextJsConfig = [
       },
     },
   },
+
   {
     plugins: {
       "@next/next": pluginNext,
@@ -35,6 +40,7 @@ export const nextJsConfig = [
       ...pluginNext.configs["core-web-vitals"].rules,
     },
   },
+
   {
     plugins: {
       "react-hooks": pluginReactHooks,
@@ -46,4 +52,5 @@ export const nextJsConfig = [
       "react/react-in-jsx-scope": "off",
     },
   },
+
 ];
