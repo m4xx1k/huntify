@@ -6,7 +6,8 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "turbo run format",
-    "check-types": "turbo run check-types"
+    "check-types": "turbo run check-types",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@eslint/js": "^9.37.0",
@@ -14,7 +15,10 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.2.2",
     "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.3",
     "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "turbo": "^2.5.8",
     "typescript": "5.9.2",
     "typescript-eslint": "^8.46.0"
@@ -25,5 +29,21 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
+  },
+  "lint-staged": {
+    "apps/web/**/*.{ts,tsx,js,jsx}": [
+      "eslint --config apps/web/eslint.config.js --fix --max-warnings=0",
+      "prettier --config apps/web/prettier.config.mjs --write"
+    ],
+    "apps/web/**/*.{css,scss,md,mdx,json,html,yml,yaml}": [
+      "prettier --config apps/web/prettier.config.mjs --write"
+    ],
+    "apps/api/**/*.{ts,tsx,js,jsx}": [
+      "eslint --config apps/api/eslint.config.mjs --fix --max-warnings=0",
+      "prettier --config apps/api/prettier.config.mjs --write"
+    ],
+    "apps/api/**/*.{css,scss,md,mdx,json,html,yml,yaml}": [
+      "prettier --config apps/api/prettier.config.mjs --write"
+    ]
   }
 }
